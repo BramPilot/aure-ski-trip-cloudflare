@@ -1,0 +1,15 @@
+{
+  "name": "aure-ski-trip-cloudflare",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AuréSkiTrip 2027 website and committee admin dashboard for Cloudflare Workers + D1.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test tests/worker.test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.47.0"
+  }
+}
