@@ -1,0 +1,9 @@
+AURÉSKITRIP — ONE-CLICK CLOUDFLARE PACKAGE
+
+1. Click the Deploy to Cloudflare link supplied with this project.
+2. Approve the deployment in Cloudflare.
+3. Open /admin/ on the new Cloudflare URL.
+4. Choose your admin password.
+
+The database starts at 11/20 with eleven editable placeholder participants.
+Replace those placeholders with real names instead of adding the same people again.
