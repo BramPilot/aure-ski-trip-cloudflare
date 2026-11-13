@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=5624d049-c77d-4a13-9c98-27636b0967fe
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#034aad" />
+    <meta name="description" content="Join Auré Ski in Val Thorens, 4–8 February 2027. Eleven of twenty spots are filled and sign-ups close 21 November 2026." />
+    <meta property="og:title" content="Auré Ski 2027 · Val Thorens" />
+    <meta property="og:description" content="Five days. Three ski days. Eleven of twenty spots filled. Sign up by 21 November 2026." />
+    <title>Auré Ski 2027 · I.F.S. Aurelius</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#basecamp">Skip to trip information</a>
+
+    <div class="opening-wipe" aria-hidden="true">
+      <img src="./assets/aure-ski-logo-official.png" alt="" />
+      <p>VAL THORENS · 04–08 FEB 2027</p>
+    </div>
+
+    <div class="site-progress" aria-hidden="true"><span id="siteProgress"></span></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Auré Ski 2027 — back to the summit">
+        <img src="./assets/aure-ski-badge-blue.png" alt="" />
+        <span><strong>AURÉ SKI</strong><small>VAL THORENS · 2027</small></span>
+      </a>
+      <div class="header-meta" aria-label="Trip details"><span>04–08 FEB</span><span>€543 P.P.</span><span data-participant-ratio>11/20 FILLED</span></div>
+      <div class="header-actions">
+        <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">
+          <span class="equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span data-sound-label>Après mode</span>
+        </button>
+        <a class="header-book" data-booking-link target="_blank" rel="noreferrer">Book <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <div class="party-overlay" id="partyOverlay" aria-hidden="true">
+      <div class="party-beam party-beam--one"></div><div class="party-beam party-beam--two"></div><div class="party-beam party-beam--three"></div>
+      <img class="disco-ball" src="./assets/disco-ball.png" alt="" />
+      <div class="party-stamp"><span>APRÈS MODE</span><strong>ON</strong></div>
+    </div>
+
+    <main id="top">
+      <section class="mountain-journey" id="journey" aria-label="Interactive descent to the trip information">
+        <div class="mountain-stage">
+          <img class="mountain-background" id="mountainBackground" src="./assets/mountain-descent.png" alt="Illustrated Alpine slope descending towards Val Thorens" />
+          <div class="mountain-tint" aria-hidden="true"></div><canvas class="snow-canvas" id="snowCanvas" aria-hidden="true"></canvas>
+          <div class="journey-intro" id="journeyIntro">
+            <p class="eyebrow"><span class="live-dot"></span> <span data-participant-ratio>11/20</span> SPOTS FILLED · <span data-registration-status>REGISTRATION IS LIVE</span></p>
+            <h1>Find your line.<br /><em>Join the crew.</em></h1>
+            <p>Five days · Three ski days · Val Thorens</p>
+            <div class="scroll-prompt"><span>Scroll to ski</span><i aria-hidden="true"></i></div>
+          </div>
+          <div class="skier" id="skier" aria-hidden="true">⛷</div>
+          <div class="journey-progress" aria-hidden="true"><span id="journeyProgress"></span></div>
+          <div class="descent-hud" aria-hidden="true"><span>DESCENT</span><strong><b id="descentPercent">00</b>%</strong><span id="descentStatus">SUMMIT</span></div>
+          <div class="slope-note slope-note--one" data-slope-note><strong>2,300 M</strong><span>village altitude</span></div>
+          <div class="slope-note slope-note--two" data-slope-note><strong>3 DAYS</strong><span>on the slopes</span></div>
+          <div class="slope-note slope-note--three" data-slope-note><strong>1 CREW</strong><span>all the way down</span></div>
+          <div class="arrival-message" id="arrivalMessage">
+            <img src="./assets/aure-ski-badge-red.png" alt="" /><p>YOU MADE IT TO BASECAMP</p><h2>Now make it official.</h2><a href="#basecamp">See the trip <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="basecamp" id="basecamp">
+        <div class="ticker" aria-hidden="true"><div>
+          <span><span data-participant-ratio>11/20</span> SPOTS FILLED</span><b>✦</b><span>SIGN-UPS CLOSE <span data-registration-deadline>21 NOVEMBER 2026</span></span><b>✦</b><span>MYSTERY GIFT FOR EARLY SIGN-UPS</span><b>✦</b><span>€543 P.P.</span><b>✦</b>
+          <span><span data-participant-ratio>11/20</span> SPOTS FILLED</span><b>✦</b><span>SIGN-UPS CLOSE <span data-registration-deadline>21 NOVEMBER 2026</span></span><b>✦</b><span>MYSTERY GIFT FOR EARLY SIGN-UPS</span><b>✦</b><span>€543 P.P.</span><b>✦</b>
+        </div></div>
+
+        <nav class="section-rail reveal" aria-label="Page navigation">
+          <div class="section-rail__links">
+            <a href="#booking" data-section-link="booking">Book</a><a href="#details" data-section-link="details">Trip</a><a href="#packing-list" data-section-link="packing-list">Pack</a><a href="#weather" data-section-link="weather">Weather</a><a href="#committee" data-section-link="committee">Committee</a><a href="#faq" data-section-link="faq">FAQ</a>
+          </div>
+          <div class="section-rail__tools"><button type="button" id="calendarButton">＋ Calendar</button><button type="button" id="shareButton">↗ Share</button></div>
+        </nav>
+
+        <section class="site-announcement reveal" id="siteAnnouncement" hidden aria-live="polite">
+          <div><p class="eyebrow">UPDATE FROM THE SKI COMMITTEE</p><h2 id="announcementTitle"></h2><p id="announcementBody"></p></div>
+          <button type="button" id="dismissAnnouncement" aria-label="Dismiss this update">DISMISS ×</button>
+        </section>
+
+        <section class="basecamp-intro reveal">
+          <div><p class="eyebrow">YOUR 2027 WINTER ESCAPE</p><h2>Everything you need.<br /><em>Nothing to overthink.</em></h2></div>
+          <p>Registration, the key conditions and all confirmed trip details in one mobile-first basecamp. Anything still TBA will be sent to the email address used during registration.</p>
+        </section>
+
+        <section class="action-grid" id="booking" aria-label="Main trip links">
+          <article class="action-card action-card--hero reveal tilt-card"><span class="card-index">01</span><div><p class="card-label"><span class="live-dot"></span> <span data-participant-ratio>11/20</span> SPOTS FILLED</p><h3>Book Auré Ski</h3><p>Sign up by <span data-registration-deadline>21 November 2026</span>. The first participants to register receive a limited mystery gift.</p></div><a class="card-link" data-booking-link target="_blank" rel="noreferrer">REGISTER NOW <span aria-hidden="true">↗</span></a></article>
+          <article class="action-card reveal tilt-card"><span class="card-index">02</span><div><p class="card-label">BUILD THE TRIP WITH US</p><h3>Drop an idea</h3><p>Theme night, bus game or group activity? Put it in the Aurelius Idea Box.</p></div><a class="card-link" data-idea-link target="_blank" rel="noreferrer">OPEN IDEA BOX <span aria-hidden="true">↗</span></a></article>
+          <article class="action-card action-card--packing reveal tilt-card"><span class="card-index">03</span><div><p class="card-label">PACK WITHOUT THE PANIC</p><h3>Pack smart</h3><p>Tick off everything you need. Your progress is remembered on this device.</p></div><a class="card-link" href="#packing-list">OPEN PACKING LIST <span aria-hidden="true">↓</span></a></article>
+          <article class="action-card action-card--spotify reveal tilt-card"><span class="card-index">04</span><div><p class="card-label">THE SOUND OF THE BUS</p><h3>Join the playlist</h3><p>Start the pre-party now and add the tracks you want to hear on the way to the Alps.</p></div><a class="card-link" data-spotify-link target="_blank" rel="noreferrer">OPEN SPOTIFY <span aria-hidden="true">▶</span></a></article>
+        </section>
+
+        <section class="booking-pulse reveal" aria-label="Current booking status">
+          <div class="booking-pulse__copy"><p class="eyebrow"><span class="live-dot"></span> BOOKING STATUS</p><h2><strong data-current-count>11</strong> of <span data-target-count>20</span> spots<br />already filled.</h2><p>Sign-ups close on <strong data-registration-deadline>21 November 2026</strong>. Secure your place while the first group is being formed.</p></div>
+          <div class="booking-pulse__meter" data-booking-meter role="progressbar" aria-label="11 of 20 spots filled" aria-valuemin="0" aria-valuemax="20" aria-valuenow="11"><div><span></span></div><p><strong data-participant-percentage>55%</strong><span>filled</span></p></div>
+          <div class="mystery-gift"><span>LIMITED</span><h3>A mystery gift for the first sign-ups.</h3><p>Register early and there might be something extra waiting for you. Available while supplies last.</p></div>
+        </section>
+
+        <section class="essentials reveal" id="details" aria-labelledby="details-title">
+          <header class="section-heading"><p class="eyebrow">THE CONFIRMED DETAILS</p><h2 id="details-title">The trip,<br /><em>unpacked.</em></h2></header>
+          <div class="fact-grid">
+            <article class="fact fact--price"><span>PRICE</span><strong>€543</strong><small>per person</small></article><article class="fact"><span>DATES</span><strong>04–08</strong><small>February 2027</small></article><article class="fact"><span>SPOTS</span><strong data-participant-ratio>11/20</strong><small>already filled</small></article><article class="fact"><span>DEADLINE</span><strong>21.11</strong><small>2026 · sign-ups close</small></article>
+          </div>
+          <div class="included-grid">
+            <article><p class="mini-title">INCLUDED</p><ul><li>Return group coach: Netherlands ↔ Val Thorens</li><li>2 nights at Résidence Les Temples du Soleil</li><li>3-day Val Thorens ski pass</li><li>Tourist tax</li></ul></article>
+            <article><p class="mini-title">NOT INCLUDED</p><ul><li>Ski or snowboard equipment</li><li>Travel and cancellation insurance</li><li>Meals and drinks</li><li>Optional Les Trois Vallées upgrade (+€76)</li></ul></article>
+          </div>
+          <div class="detail-band">
+            <article><span>STAY</span><strong>Résidence Les Temples du Soleil</strong><p>Friday 5 to Sunday 7 February. One accommodation type is available during booking.</p><a data-accommodation-link target="_blank" rel="noreferrer">View accommodation ↗</a></article>
+            <article><span>TRAVEL</span><strong>Overnight coach journey</strong><p><b>Departure:</b> The Hague, Schedeldoekshaven 600–592, 2595 AA — bus platform at The Hague Central Station, FlixBus stop. <b>Val Thorens:</b> Place des Arolles, near Centre Sportif. Exact departure and arrival times are TBA and will be emailed to participants.</p></article>
+            <article><span>ROOMS</span><strong>Choose a shared room name</strong><p>Want to room together? Up to four people should enter the exact same room name. This is a preference; the committee may still adjust the final allocation.</p></article>
+          </div>
+          <section class="luggage-card" id="luggage" aria-labelledby="luggage-title">
+            <div class="luggage-card__intro">
+              <p class="eyebrow">COACH LUGGAGE</p>
+              <h3 id="luggage-title">Pack smart.<br /><em>The hold is limited.</em></h3>
+              <p>The coach has limited luggage space. These allowances apply <strong>per person</strong>.</p>
+            </div>
+            <div class="luggage-card__allowance" aria-label="Coach luggage allowance per person">
+              <article><strong>20 KG</strong><span>1 suitcase or travel bag</span><small>Maximum 80 × 70 × 30 cm</small></article>
+              <article><strong>2 KG</strong><span>1 piece of hand luggage</span><small>Keep it compact</small></article>
+              <article><strong>1 SET</strong><span>Skis + poles or snowboard</span><small>Remove snowboard bindings</small></article>
+              <article><strong>1 PAIR</strong><span>Ski or snowboard boots</span><small>Separate from your board bag</small></article>
+            </div>
+            <div class="luggage-card__rules">
+              <p><strong>Snowboards:</strong> one board per snowboard bag. Do not put boots, clothing or other luggage in the bag, and remove the bindings before travel.</p>
+              <p><strong>Important:</strong> food packages are not allowed. Label all luggage. Excess baggage may be refused by the driver, and you remain responsible for your belongings at all times.</p>
+              <a href="https://www.totallysnow.nl/busreis" target="_blank" rel="noreferrer">VIEW ALL COACH CONDITIONS ↗</a>
+            </div>
+          </section>
+        </section>
+
+        <section class="red-alert reveal" aria-label="Important booking conditions">
+          <div><span>READ BEFORE YOU BOOK</span><h2>Your registration is immediately binding.</h2></div>
+          <p>Cancellation is no longer free once you register — even if your deposit has not yet been paid. A 40% deposit is due within 10 days; the remaining balance is due 8 weeks before departure. Pay only through your personal Sunweb payment page.</p>
+          <a data-terms-link target="_blank" rel="noreferrer">READ THE TERMS <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section class="participant-info reveal" aria-labelledby="participant-info-title">
+          <header class="section-heading">
+            <div><p class="eyebrow">AFTER YOU REGISTER</p><h2 id="participant-info-title">Booked?<br /><em>Do these next.</em></h2></div>
+            <p>Your confirmation email is the starting point. Keep it, activate your account and note the deadlines below.</p>
+          </header>
+          <div class="participant-info__grid">
+            <article><span>01</span><h3>Activate My Sunweb</h3><p>Use the activation link in your registration confirmation. My Sunweb shows your booking, payments and available changes. You can also use the Sunweb app.</p></article>
+            <article><span>02</span><h3>Pay through Sunweb</h3><p>Pay the 40% deposit within 10 days and the remaining balance no later than 8 weeks before departure. Never use a bank transfer: it will not be linked correctly to the group booking.</p></article>
+            <article><span>03</span><h3>Know the deadlines</h3><ul><li>Coach participation: up to 6 weeks before departure</li><li>Booked extras, including ski rental: up to 2 weeks before departure</li><li>Personal details: up to 3 days before departure</li></ul><p class="participant-info__note">Cancellation insurance can only be added during registration and cannot be changed or cancelled afterwards.</p></article>
+          </div>
+          <div class="participant-info__footer">
+            <p class="participant-info__contact">Questions about your Sunweb booking or changes? Contact Totally Snow Group Travel at <a href="mailto:groepsreizen@totallysnow.nl">groepsreizen@totallysnow.nl</a> or <a href="tel:+31102802260">+31 (0)10 280 2260</a>.</p>
+            <a class="participant-info__download" href="./assets/totally-snow-participant-information-2026-2027.pdf" download>DOWNLOAD FULL PARTICIPANT GUIDE <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="weather-section reveal" id="weather" aria-labelledby="weather-title">
+          <header class="section-heading section-heading--weather"><div><p class="eyebrow"><span class="weather-live-dot"></span> LIVE FROM THE MOUNTAIN</p><h2 id="weather-title">Val Thorens,<br /><em>right now.</em></h2></div><p>Live resort conditions for a little extra anticipation. This is current weather, not the February trip forecast.</p></header>
+          <div class="weather-panel" id="weatherPanel" aria-live="polite">
+            <div class="weather-current"><span id="weatherStatus">Loading mountain weather…</span><strong id="weatherTemperature">—°</strong><p id="weatherDescription">Connecting to Val Thorens</p><div><span>Feels like <b id="weatherFeels">—°</b></span><span>Wind <b id="weatherWind">— km/h</b></span></div></div>
+            <div class="weather-forecast" id="weatherForecast"><div><span>TODAY</span><strong>—</strong><small>— / —</small></div><div><span>TOMORROW</span><strong>—</strong><small>— / —</small></div><div><span>DAY 3</span><strong>—</strong><small>— / —</small></div></div>
+          </div>
+          <p class="weather-credit">Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a>. Mountain conditions can change quickly.</p>
+        </section>
+
+        <section class="steps reveal" aria-labelledby="steps-title">
+          <header class="section-heading"><p class="eyebrow">FROM CLICK TO SLOPE</p><h2 id="steps-title">Three steps.<br /><em>Then we ski.</em></h2></header>
+          <ol><li><span>01</span><h3>Register</h3><p>Complete the official Sunweb form, select your extras and enter your preferred room name.</p></li><li><span>02</span><h3>Watch your inbox</h3><p>Payment moments, exact travel times, final programme and remaining practical details follow by email.</p></li><li><span>03</span><h3>Meet the crew</h3><p>Pack your gear, board the overnight coach in The Hague and wake up in Val Thorens.</p></li></ol>
+          <a class="mega-cta" data-booking-link target="_blank" rel="noreferrer"><span>CLAIM YOUR PLACE</span><span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section class="packing-section reveal" id="packing-list" aria-labelledby="packing-title">
+          <header class="packing-heading">
+            <div><p class="eyebrow">YOUR INTERACTIVE PACKING LIST</p><h2 id="packing-title">Pack it.<br /><em>Tick it. Ski.</em></h2></div>
+            <p>Check items as you pack. Your progress is stored only on this device, so it will still be here when you return.</p>
+          </header>
+          <div class="packing-layout">
+            <aside class="packing-progress-card" id="packingProgressCard">
+              <img src="./assets/aure-ski-badge-blue.png" alt="" />
+              <div class="packing-ring" id="packingProgress" role="progressbar" aria-label="Packing progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div><strong id="packingPercent">0%</strong><span>packed</span></div></div>
+              <p id="packingCount">0 of 28 items ready</p>
+              <button type="button" id="packingReset">Reset checklist</button>
+            </aside>
+            <div class="packing-categories">
+              <article class="packing-category">
+                <header><div><span>01</span><h3>Documents &amp; money</h3></div><small data-pack-category-count>0 / 5</small></header>
+                <label><input type="checkbox" data-pack-item value="photo-id" /><span>Passport or valid photo ID</span></label>
+                <label><input type="checkbox" data-pack-item value="health-card" /><span>Health insurance card</span></label>
+                <label><input type="checkbox" data-pack-item value="booking-details" /><span>Sunweb booking details</span></label>
+                <label><input type="checkbox" data-pack-item value="insurance-details" /><span>Winter sports insurance details</span></label>
+                <label><input type="checkbox" data-pack-item value="wallet" /><span>Bank card and wallet</span></label>
+              </article>
+              <article class="packing-category">
+                <header><div><span>02</span><h3>Ski clothing</h3></div><small data-pack-category-count>0 / 9</small></header>
+                <label><input type="checkbox" data-pack-item value="ski-jacket" /><span>Ski jacket</span></label>
+                <label><input type="checkbox" data-pack-item value="ski-trousers" /><span>Ski trousers</span></label>
+                <label><input type="checkbox" data-pack-item value="base-layers" /><span>Thermal base layers</span></label>
+                <label><input type="checkbox" data-pack-item value="mid-layers" /><span>Warm mid-layers</span></label>
+                <label><input type="checkbox" data-pack-item value="ski-socks" /><span>Ski socks</span></label>
+                <label><input type="checkbox" data-pack-item value="gloves" /><span>Waterproof gloves</span></label>
+                <label><input type="checkbox" data-pack-item value="beanie-neck" /><span>Beanie and neck warmer</span></label>
+                <label><input type="checkbox" data-pack-item value="casual-clothes" /><span>Casual clothes and shoes</span></label>
+                <label><input type="checkbox" data-pack-item value="underwear-sleepwear" /><span>Underwear and sleepwear</span></label>
+              </article>
+              <article class="packing-category">
+                <header><div><span>03</span><h3>On the mountain</h3></div><small data-pack-category-count>0 / 7</small></header>
+                <label><input type="checkbox" data-pack-item value="helmet" /><span>Helmet — strongly recommended</span></label>
+                <label><input type="checkbox" data-pack-item value="goggles" /><span>Ski goggles</span></label>
+                <label><input type="checkbox" data-pack-item value="equipment" /><span>Skis or snowboard and boots — or rental booked</span></label>
+                <label><input type="checkbox" data-pack-item value="slope-backpack" /><span>Small slope backpack</span></label>
+                <label><input type="checkbox" data-pack-item value="water-bottle" /><span>Reusable water bottle</span></label>
+                <label><input type="checkbox" data-pack-item value="sunscreen" /><span>High-SPF sunscreen</span></label>
+                <label><input type="checkbox" data-pack-item value="lip-balm" /><span>Lip balm with SPF</span></label>
+              </article>
+              <article class="packing-category">
+                <header><div><span>04</span><h3>Coach &amp; apartment</h3></div><small data-pack-category-count>0 / 7</small></header>
+                <label><input type="checkbox" data-pack-item value="toiletries" /><span>Toiletries</span></label>
+                <label><input type="checkbox" data-pack-item value="medication" /><span>Personal medication</span></label>
+                <label><input type="checkbox" data-pack-item value="charger" /><span>Phone charger</span></label>
+                <label><input type="checkbox" data-pack-item value="power-bank" /><span>Power bank</span></label>
+                <label><input type="checkbox" data-pack-item value="sleep-kit" /><span>Travel pillow, eye mask and earplugs</span></label>
+                <label><input type="checkbox" data-pack-item value="coach-snacks" /><span>Coach snacks</span></label>
+                <label><input type="checkbox" data-pack-item value="headphones" /><span>Headphones</span></label>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="vibe-picker reveal" aria-labelledby="vibe-title">
+          <div class="vibe-heading"><p class="eyebrow">WHAT’S YOUR SKI VIBE?</p><h2 id="vibe-title">Same mountain.<br /><em>Your kind of day.</em></h2><p>This is just for fun. Your choice stays on this device and is not sent to the Ski Committee.</p></div>
+          <div class="vibe-interactive">
+            <div class="vibe-options" aria-label="Choose your ski vibe"><button type="button" data-vibe="easy" aria-pressed="true"><span>01</span><strong>Easy does it</strong><small>Good crew, zero pressure</small></button><button type="button" data-vibe="cruise" aria-pressed="false"><span>02</span><strong>Mountain cruise</strong><small>Long laps, terrace stop</small></button><button type="button" data-vibe="send" aria-pressed="false"><span>03</span><strong>Full send</strong><small>First lift, last run</small></button></div>
+            <article class="vibe-result" id="vibeResult" aria-live="polite"><span>YOUR AURÉ SKI ENERGY</span><h3 id="vibeResultTitle">Good turns. Better company.</h3><p id="vibeResultText">Find your rhythm, enjoy the views and let the mountain do the rest.</p></article>
+          </div>
+        </section>
+
+        <section class="committee reveal" id="committee" aria-labelledby="committee-title">
+          <figure class="committee-photo"><img src="./assets/ski-committee.webp" alt="The Aurelius Ski Committee with Aurelius Chair Zara Mae Kapoen" loading="lazy" /><figcaption>Ski Committee with Aurelius Chair Zara Mae Kapoen</figcaption></figure>
+          <div class="committee-copy"><p class="eyebrow">MEET THE SKI COMMITTEE</p><h2 id="committee-title">Four people.<br /><em>One very big plan.</em></h2><blockquote>“We are not simply organising a ski trip. We are creating five days you will still be talking about next year.”</blockquote><p>We cannot wait to bring the Aurelius community to Val Thorens. From the first bus song to the final run, we are putting everything into making this the best Auré Ski trip yet — structured where it matters, unforgettable everywhere else.</p><ul class="team-list"><li><strong>Bram Boersma</strong><span>Head of Ski Committee</span></li><li><strong>Maxim Molitor</strong><span>Vice-Head of Ski Committee</span></li><li><strong>Helene Jürgens</strong><span>Ski Commissioner</span></li><li><strong>Felix Börger</strong><span>Ski Commissioner</span></li></ul><a class="instagram-cta" data-instagram-link target="_blank" rel="noreferrer"><span>FOLLOW THE TRIP</span><strong>@aure.ski ↗</strong></a></div>
+        </section>
+
+        <section class="countdown-section reveal" aria-labelledby="countdown-title">
+          <div><p class="eyebrow">THE COUNTDOWN IS ON</p><h2 id="countdown-title">See you at the summit.</h2></div>
+          <div class="countdown" id="countdown" aria-live="polite"><div><strong id="days">—</strong><span>days</span></div><div><strong id="hours">—</strong><span>hours</span></div><div><strong id="minutes">—</strong><span>minutes</span></div><div><strong id="seconds">—</strong><span>seconds</span></div></div>
+        </section>
+
+        <section class="faq-section reveal" id="faq" aria-labelledby="faq-title">
+          <header class="faq-intro"><p class="eyebrow">NO SURPRISES</p><h2 id="faq-title">Frequently asked.<br /><em>Clearly answered.</em></h2><p>If a detail is still TBA, it will be emailed to the address used for registration.</p></header>
+          <div class="faq-list">
+            <details><summary>Can beginners join?</summary><div>Absolutely. Beginners are very welcome. Please note that ski lessons cannot be booked through Sunweb for this short trip. You can explore independent options through <a href="https://www.esf.net/" target="_blank" rel="noreferrer">ESF</a>.</div></details>
+            <details><summary>What exactly is included in the €543 price?</summary><div>Return group coach transport between the Netherlands and Val Thorens, two nights at Résidence Les Temples du Soleil, a 3-day Val Thorens ski pass and tourist tax.</div></details>
+            <details><summary>Can I arrange my own transport?</summary><div>Yes. You may arrange your own transport, but the bundled coach fare will not be deducted from the €543 trip price. You must inform the Ski Committee at <a href="mailto:aurelius@hotelschool.nl?subject=Aur%C3%A9%20Ski%20%E2%80%94%20own%20transport">aurelius@hotelschool.nl</a> so Sunweb can be notified.</div></details>
+            <details><summary>Where does the coach depart?</summary><div>The coach departs from <strong>The Hague, Schedeldoekshaven 600–592, 2595 AA</strong>, at the bus platform by The Hague Central Station, FlixBus stop. Exact departure and arrival times are TBA and will be emailed to participants.</div></details>
+            <details><summary>What is not included?</summary><div>Ski or snowboard equipment, travel and cancellation insurance, meals and drinks, and the optional Les Trois Vallées ski-pass upgrade are not included.</div></details>
+            <details><summary>How do registration and payment work?</summary><div>Register through the official participant link and activate My Sunweb through your confirmation email. A 40% deposit is due within 10 days; the remaining balance must be paid no later than 8 weeks before departure. Pay only through your personal Sunweb payment page — never by bank transfer.</div></details>
+            <details><summary>Can I cancel after registering?</summary><div>Your booking is final as soon as you complete registration, even if you have not yet paid the deposit. Cancellation costs are 40% of the basic trip price up to 57 days before departure; 60% from 56 to 21 days; 80% from 20 to 7 days; and 100% from 6 days before departure through departure day. Within 2 weeks of departure, the percentage is calculated over the full trip price including extras. Cancellation must be emailed to <a href="mailto:groepsreizen@totallysnow.nl">groepsreizen@totallysnow.nl</a> and cannot be reversed. Read the <a data-terms-link target="_blank" rel="noreferrer">general terms and conditions</a> before confirming.</div></details>
+            <details><summary>How does the room allocation work?</summary><div>There is one accommodation type. If you want to share with a group of up to four, everyone should enter the exact same room name during booking. It remains a preference and the Ski Committee may still adjust the final allocation.</div></details>
+            <details><summary>Can I bring or rent equipment?</summary><div>You may bring your own equipment or add rental equipment during the Sunweb booking process. Current options and prices are shown there. A limited number of travellers may bring their own equipment without extra transport charges. Because coach space is limited, tell the Ski Committee if you plan to bring your own skis or snowboard.</div></details>
+            <details><summary>Can I upgrade the ski pass?</summary><div>Yes. The Les Trois Vallées upgrade costs €76. We recommend keeping the included Val Thorens pass so we can stay together in one ski area, but the choice is yours.</div></details>
+            <details><summary>Are ski lessons available?</summary><div>Not through Sunweb for this trip. If you want to arrange a lesson independently, visit <a href="https://www.esf.net/" target="_blank" rel="noreferrer">ESF</a> and check availability directly.</div></details>
+            <details><summary>Are meals included?</summary><div>No. Food and drinks are not included in the €543 trip price.</div></details>
+            <details><summary>How much luggage can I bring?</summary><div>Per person: one suitcase or travel bag up to 20 kg and 80 × 70 × 30 cm; one piece of hand luggage up to 2 kg; one pair of skis with poles or one snowboard; and one pair of ski or snowboard boots. Snowboard bindings must be removed. A snowboard bag may contain only one board — no boots, clothing or other items. Food packages are not allowed, all luggage must be labelled, and excess baggage may be refused by the driver. You remain responsible for your belongings. See the <a href="https://www.totallysnow.nl/busreis" target="_blank" rel="noreferrer">Totally Snow coach conditions</a>.</div></details>
+            <details><summary>What should I expect on arrival and departure day?</summary><div>Totally Snow representatives will welcome the group in Val Thorens. Rooms are normally available later in the afternoon; luggage can be stored in the coach luggage area in the morning. Ski passes are collected in advance and the equipment rental partner is informed of the group’s arrival. On departure day, rooms are usually vacated around 08:00 and must be left clean to avoid deposit deductions. Exact check-in, check-out and coach departure times will be confirmed locally.</div></details>
+            <details><summary>Is a helmet mandatory?</summary><div>No, but the Ski Committee strongly recommends wearing one.</div></details>
+            <details><summary>Which insurance do I need, and what happens if I am injured?</summary><div>Travel and cancellation insurance are not included. Check the Sunweb information and the <a data-terms-link target="_blank" rel="noreferrer">general terms and conditions</a>, and make sure your policy includes winter sports cover.</div></details>
+            <details><summary>What are the rules around alcohol?</summary><div>NIX18 applies: no alcohol under the age of 18. Everyone is expected to act responsibly and follow Aurelius, accommodation and local rules.</div></details>
+            <details><summary>Where can I see who has registered?</summary><div>After registering through Sunweb, participant information remains available through the Aurelius website under Events. There is no separate participant portal on this page.</div></details>
+            <details><summary>What happens on the first school day after our return?</summary><div>Monday 8 February is the first day of Block C. The committee is exploring the options with school, but every participant remains responsible for checking and managing their own academic schedule before booking.</div></details>
+            <details><summary>When do we receive departure details and the programme?</summary><div>The pickup location is confirmed as The Hague Central Station, Schedeldoekshaven 600–592. Exact departure and arrival times, local deposit information, emergency details and the final programme are still TBA. They will be emailed to the address used during registration.</div></details>
+          </div>
+        </section>
+
+        <section class="final-cta reveal"><img src="./assets/aure-ski-logo-official.png" alt="Auré Ski 2027" /><div><p>04–08 FEBRUARY 2027 · VAL THORENS</p><h2>Ready to make<br />mountain history?</h2></div><a data-booking-link target="_blank" rel="noreferrer">BOOK THE TRIP <span aria-hidden="true">↗</span></a></section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><img src="./assets/aure-ski-badge-cream.png" alt="" /><span><strong>AURÉ SKI 2027</strong><small>I.F.S. AURELIUS</small></span></div>
+      <div class="footer-links"><a data-instagram-link target="_blank" rel="noreferrer">Instagram</a><a data-idea-link target="_blank" rel="noreferrer">Idea Box</a><a data-totally-link target="_blank" rel="noreferrer">Totally Snow</a><a data-terms-link target="_blank" rel="noreferrer">Terms</a><a href="mailto:aurelius@hotelschool.nl">aurelius@hotelschool.nl</a></div>
+      <a class="back-top" href="#top">BACK TO THE SUMMIT ↑</a>
+    </footer>
+
+    <div class="sound-toast" id="soundToast" role="status" aria-live="polite">Après mode on — disco ball included</div>
+    <script src="./site-config.js"></script><script src="./script.js"></script>
+  </body>
+</html>
