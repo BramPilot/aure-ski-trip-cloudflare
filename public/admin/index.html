@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#034aad" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Auré Ski Admin</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="admin-brand" href="/" aria-label="Open the public Auré Ski website">
+        <img src="../assets/aure-ski-badge-cream.png" alt="" />
+        <span><strong>AURÉ SKI</strong><small>COMMITTEE CONTROL</small></span>
+      </a>
+      <div class="top-actions">
+        <a href="/" target="_blank" rel="noreferrer">VIEW WEBSITE ↗</a>
+        <button type="button" id="logoutButton" hidden>LOG OUT</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="login-card" id="setupView" hidden>
+        <img src="../assets/aure-ski-badge-blue.png" alt="Auré Ski 2027" />
+        <p class="eyebrow">FIRST-TIME SETUP</p>
+        <h1>Choose your password.</h1>
+        <p>This page appears only once. Choose the password the Ski Committee will use to manage the website.</p>
+        <form id="setupForm">
+          <label for="setupPassword">New admin password</label>
+          <input id="setupPassword" name="setupPassword" type="password" autocomplete="new-password" minlength="12" required />
+          <label for="setupPasswordConfirm">Repeat password</label>
+          <input id="setupPasswordConfirm" name="setupPasswordConfirm" type="password" autocomplete="new-password" minlength="12" required />
+          <button type="submit">CREATE ADMIN ACCESS</button>
+          <p class="form-error" id="setupError" role="alert"></p>
+        </form>
+      </section>
+
+      <section class="login-card" id="loginView">
+        <img src="../assets/aure-ski-badge-blue.png" alt="Auré Ski 2027" />
+        <p class="eyebrow">SKI COMMITTEE ONLY</p>
+        <h1>Control the mountain.</h1>
+        <p>Manage registrations, participants and website updates from one secure place.</p>
+        <form id="loginForm">
+          <label for="password">Admin password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <button type="submit">LOG IN</button>
+          <p class="form-error" id="loginError" role="alert"></p>
+        </form>
+      </section>
+
+      <section class="dashboard" id="dashboard" hidden>
+        <div class="dashboard-heading">
+          <div><p class="eyebrow">LIVE CONTROL PANEL</p><h1>AuréSkiTrip 2027</h1></div>
+          <p>Changes are stored centrally and appear on the public website immediately.</p>
+        </div>
+
+        <section class="stats" aria-label="Trip status">
+          <article><span>CONFIRMED</span><strong id="confirmedCount">—</strong><small id="confirmedTarget">of 20 travellers</small></article>
+          <article><span>REGISTRATION</span><strong id="registrationState">—</strong><small>public booking button</small></article>
+          <article><span>PENDING</span><strong id="pendingCount">—</strong><small>awaiting confirmation</small></article>
+          <article><span>ANNOUNCEMENT</span><strong id="announcementState">—</strong><small>visible on the website</small></article>
+        </section>
+
+        <section class="panel" id="tripSettings">
+          <div class="panel-heading"><div><p class="eyebrow">TRIP CONTROLS</p><h2>Website settings</h2></div><span class="save-state" id="settingsState"></span></div>
+          <form class="settings-form" id="settingsForm">
+            <label class="toggle-row">
+              <span><strong>Registration open</strong><small>Switch the booking buttons on or off instantly.</small></span>
+              <input type="checkbox" id="registrationOpen" />
+              <i aria-hidden="true"></i>
+            </label>
+            <label><span>Target number of travellers</span><input type="number" id="targetCount" min="1" max="500" required /></label>
+            <label><span>Communicated deadline</span><input type="text" id="registrationDeadline" maxlength="80" required /></label>
+            <label class="full"><span>Official booking URL</span><input type="url" id="bookingUrl" required /></label>
+            <button class="primary-button" type="submit">SAVE WEBSITE SETTINGS</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">MEMBER UPDATES</p><h2>Announcements</h2><p>Publish one clear message above the main website content.</p></div>
+            <button class="primary-button" type="button" id="addAnnouncement">+ NEW MESSAGE</button>
+          </div>
+          <div class="announcement-list" id="announcementList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">TRAVELLER MANAGEMENT</p><h2>Participants</h2><p>Confirmed participants automatically determine the public registration counter.</p></div>
+            <button class="primary-button" type="button" id="addParticipant">+ ADD PARTICIPANT</button>
+          </div>
+          <div class="participant-tools">
+            <label><span class="sr-only">Search participants</span><input type="search" id="participantSearch" placeholder="Search name, email or room…" /></label>
+            <select id="participantFilter" aria-label="Filter by status"><option value="all">All statuses</option><option value="confirmed">Confirmed</option><option value="pending">Pending</option><option value="cancelled">Cancelled</option></select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Name</th><th>Contact</th><th>Room</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
+              <tbody id="participantTable"></tbody>
+            </table>
+          </div>
+          <p class="empty-state" id="participantEmpty" hidden>No participants match your search.</p>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="participantDialog">
+      <form method="dialog" class="dialog-card" id="participantForm">
+        <header><div><p class="eyebrow">TRAVELLER</p><h2 id="participantDialogTitle">Add participant</h2></div><button class="close-button" type="button" data-close-dialog="participantDialog" aria-label="Close">×</button></header>
+        <input type="hidden" id="participantId" />
+        <div class="form-grid">
+          <label class="full"><span>Name</span><input type="text" id="participantName" maxlength="120" required /></label>
+          <label><span>Email</span><input type="email" id="participantEmail" maxlength="180" /></label>
+          <label><span>Phone</span><input type="tel" id="participantPhone" maxlength="40" /></label>
+          <label><span>Room name</span><input type="text" id="participantRoom" maxlength="100" /></label>
+          <label><span>Status</span><select id="participantStatus"><option value="confirmed">Confirmed</option><option value="pending">Pending</option><option value="cancelled">Cancelled</option></select></label>
+          <label class="full"><span>Private committee notes</span><textarea id="participantNotes" rows="4" maxlength="1200"></textarea></label>
+        </div>
+        <footer><button class="secondary-button" type="button" data-close-dialog="participantDialog">CANCEL</button><button class="primary-button" type="submit">SAVE PARTICIPANT</button></footer>
+      </form>
+    </dialog>
+
+    <dialog id="announcementDialog">
+      <form method="dialog" class="dialog-card" id="announcementForm">
+        <header><div><p class="eyebrow">WEBSITE MESSAGE</p><h2 id="announcementDialogTitle">New announcement</h2></div><button class="close-button" type="button" data-close-dialog="announcementDialog" aria-label="Close">×</button></header>
+        <input type="hidden" id="announcementId" />
+        <div class="form-grid">
+          <label class="full"><span>Title</span><input type="text" id="announcementTitleInput" maxlength="120" required /></label>
+          <label class="full"><span>Message</span><textarea id="announcementBodyInput" rows="6" maxlength="1200" required></textarea></label>
+          <label class="check-row full"><input type="checkbox" id="announcementActive" /><span><strong>Publish on the website</strong><small>Publishing this message automatically hides any previously active message.</small></span></label>
+        </div>
+        <footer><button class="secondary-button" type="button" data-close-dialog="announcementDialog">CANCEL</button><button class="primary-button" type="submit">SAVE MESSAGE</button></footer>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./admin.js"></script>
+  </body>
+</html>
